@@ -7,6 +7,9 @@ import java.util.Set;
 /**
  * Created by John_zero on 2018/1/12.
  *
+ * API
+ *  System : https://docs.oracle.com/javase/8/docs/api/java/lang/System.html
+ *
  * 使用场景举例:
  *  1. GC 回收
  *      常见: Netty 的 Direct Memory 回收
@@ -20,11 +23,30 @@ import java.util.Set;
  *  3. 数组内存拷贝
  *      常见: String, ArrayList, Arrays, CopyOnWriteArrayList ...
  *
- *  4. ...
+ *  4. 时间
+ *      System.currentTimeMillis(); // 毫秒级别 (ms)
+ *      System.nanoTime(); // 纳秒级别 (ns)
+ *
+ *      比如:
+ *          long startNano = System.nanoTime();
+ *          //
+ *          // do something ...
+ *          //
+ *          long endNano = System.nanoTime();
+ *          System.out.println("代码执行耗时 : " + (endNano - startNano) + "ns");
+ *          System.out.println("代码执行耗时 : " + ((endNano - startNano) / 1000000) + "ms");
+ *
+ *        建议使用 Spring 的 StopWatch
+ *
+ *  5. 输出打印
+ *      System.out.println();
+ *      System.err.println();
+ *
+ *  6. ...
  *      ...
  *
  */
-public class _System
+public final class _System
 {
 
     public static void main (String [] args)
