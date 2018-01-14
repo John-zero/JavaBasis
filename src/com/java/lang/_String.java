@@ -21,6 +21,16 @@ package com.java.lang;
  *
  *  String 字符串
  *
+ * 一个中文占字节数(编码长度):
+ *  不同编码格式占用字节数不一样, 并且 UTF-8 编码格式下的中文所占字节数也不一样
+ *  部分编码格式:
+ *      ASCII
+ *      ISO-8859-1
+ *      GB2312
+ *      GBK
+ *      UTF-8
+ *      UTF-16
+ *
  * 对比:
  *                  底层容器                 是否可变     是否线程安全            性能
  *  String          final char value[];     不可变                             视情况而定
@@ -65,7 +75,23 @@ public final class _String
         String _String = "String"; // 常量池
 
 
-        System.err.println("------------------------------------------------------------------------------------------");
+        try
+        {
+            String _Chinese_language = "壹";
+            System.out.println("ASCII       编码长度: " + _Chinese_language.getBytes("ASCII").length);
+            System.out.println("ISO-8859-1  编码长度: " + _Chinese_language.getBytes("ISO-8859-1").length);
+            System.out.println("GB2312      编码长度: " + _Chinese_language.getBytes("GB2312").length);
+            System.out.println("GBK         编码长度: " + _Chinese_language.getBytes("GBK").length);
+            System.out.println("UTF-8       编码长度: " + _Chinese_language.getBytes("UTF-8").length);
+            System.out.println("UTF-16      编码长度: " + _Chinese_language.getBytes("UTF-16").length);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("------------------------------------------------------------------------------------------");
 
 
         StringBuffer _StringBuffer = new StringBuffer("StringBuffer");
@@ -76,7 +102,7 @@ public final class _String
         System.out.println("intern() 之后: " + (_after_intern == "StringBuffer")); // = true
 
 
-        System.err.println("------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------");
 
 
         StringBuilder _StringBuilder = new StringBuilder("StringBuilder");
