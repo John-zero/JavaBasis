@@ -60,19 +60,19 @@ JVM (Java Virtual Machine)
 
 Windows, Linux 安装: 省略...
 
-   Windows 目录结构:
-    C:\Program Files\Java\jdk1.8.0_102
-        bin                             (JDK 各种工具命令的可执行文件)
-        db                              (Java 实现的 DB 数据库)
-        include
-        jre                             (运行时环境)
-            bin
-            lib
-        lib                             (Java library)
-            tools.jar                       (工具类库)
-        ...
-        src.zip                         (Java 类库源码)
-        ...
+    Windows 目录结构:
+        C:\Program Files\Java\jdk1.8.0_102
+            bin                             (JDK 各种工具命令的可执行文件)
+            db                              (Java 实现的 DB 数据库)
+            include
+            jre                             (运行时环境)
+                bin
+                lib
+            lib                             (Java library)
+                tools.jar                       (工具类库)
+            ...
+            src.zip                         (Java 类库源码)
+            ...
 
 Windows, Linux 环境变量配置: 省略...
 
@@ -124,7 +124,10 @@ Windows 图形化整合工具 (一般位于: C:\Program Files\Java\jdk1.8.0_102\
         
 ***        
 
-com.java.lang._System  # System.java, 提供 控制台输出, 系统时间, 主动触发 GC, 数组内存拷贝, 环境变量, 系统属性 ... 等
-com.java.lang._String  # String.java, 相关联(char, Character, StringBuffer, StringBuilder)
-com.java.lang._Object  # Object.java, 基础超父类, 提供 对象拷贝, 线程调度, 对象比较, 对象拷贝 ... 等
-com.java.lang._Number  # Number.java, 相关联(Byte, Short, Integer, Long, Float, Double, ...)
+类
+    com.java.lang._System  # System.java, 提供 控制台输出, 系统时间, 主动触发 GC, 数组内存拷贝, 环境变量, 系统属性 ... 等
+    com.java.lang._String  # String.java, 相关联(char, Character, StringBuffer, StringBuilder)
+    com.java.lang._Object  # Object.java, 基础超父类, 提供 对象拷贝, 线程调度, 对象比较, 对象拷贝 ... 等
+    com.java.lang._Number  # Number.java, 相关联(Byte, Short, Integer, Long, Float, Double, ...)
+        
+***
