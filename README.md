@@ -5,36 +5,53 @@ Java 基础迭代加深
 ***  
 
 JavaSE (Java SE Development Kit, Java 标准开发工具, JavaEE 和 JavaME 的核心)
+
     开发包: JDK
     
 JavaEE (Java Platform, Enterprise Edition, 企业级开发解决方案)
+
     开发包: JavaEE SDK (Software Development Kit)
 
 JavaME 
+
     忽略...
 
 ***
 
 JDK
+
     提供了编译, 运行 Java 程序需要的各种资源和工具, 比如 javac 编译器, jre 运行时环境, Java 类库 等
+
     JDK 
+
         Oracle JDK (原 SUN 公司被 Oracle 收购, 非开源协议[JRL协议])
+
         OpenJDK (JDK 的开源版本, GPL协议[允许商用])
+
         相关文档:
+
             知乎 | OpenJDK和SunJDK有啥区别? : https://www.zhihu.com/question/19646618
         
 SDK 
+    
     基于 JDK 基础扩展的工具包
     
 JRE (Java Runtime Environment)  
+    
     运行时环境, 比如通过 JVM 将字节码解释成可执行的机器码
+    
     由 JVM, Java 运行时类库, 动态链接库 等组成
     
 JVM (Java Virtual Machine)
+    
     Java 虚拟机 (JDK 默认使用的实现是 Hotspot VM)
+    
     JVM 将字节码解释成可执行的机器码, 不同硬件环境和操作系统所产生的机器码是不同的, 所以导致 JVM 在不同平台有不同的实现
+    
     JDK 6 体系包括: 
+    
     JDK 7 体系包括:
+    
     JDK 8 体系包括:
 
 ***
@@ -42,6 +59,7 @@ JVM (Java Virtual Machine)
 官网下载: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 Windows, Linux 安装: 省略...
+
    Windows 目录结构:
     C:\Program Files\Java\jdk1.8.0_102
         bin                             (JDK 各种工具命令的可执行文件)
@@ -58,7 +76,8 @@ Windows, Linux 安装: 省略...
 
 Windows, Linux 环境变量配置: 省略...
 
-相关命令:
+相关命令
+
     java -version # 查看当前版本
         java -help # java 命令帮助
             ...
@@ -70,7 +89,8 @@ Windows, Linux 环境变量配置: 省略...
         javap -help # javap 命令帮助
             ...
             
-监控工具:
+监控工具
+
     jps
         jps -help # jps 命令帮助
         ... (pid 由此可得) ...
@@ -79,7 +99,8 @@ Windows, Linux 环境变量配置: 省略...
         jstat -gccause pid
         ...
     
-故障排除工具:
+故障排除工具
+
     jinfo
         jinfo -flags pid
         ...
@@ -95,6 +116,7 @@ Windows, Linux 环境变量配置: 省略...
         ...
     
 Windows 图形化整合工具 (一般位于: C:\Program Files\Java\jdk1.8.0_102\bin)
+
     jconsole
     jmc
     jvisualvm 
