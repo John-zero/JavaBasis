@@ -64,8 +64,10 @@ package com.java.lang;
  *  编译后的 .class 字节码文件, 是无法直接查看的, 需要使用 jdk1.8.0_102\bin\javap (Java Class 文件反编译工具) 的执行 javap -c 类名.class 命令可视化字节码文件
  *
  * 相关文章:
- *  深入分析String.intern和String常量的实现原理 (2016.12.08) : https://www.jianshu.com/p/c14364f72b7e
- *  JVM源码分析之String.intern()导致的YGC不断变长 (2016.11.06) : http://lovestblog.cn/blog/2016/11/06/string-intern/
+ *  深入分析String.intern和String常量的实现原理 (2016-12-08) : https://www.jianshu.com/p/c14364f72b7e
+ *  JVM源码分析之String.intern()导致的YGC不断变长 (2016-11-06) : http://lovestblog.cn/blog/2016/11/06/string-intern/
+ *  StringBuilder 在高性能场景下的正确用法 (2015-12-07) : http://calvin1978.blogcn.com/articles/stringbuilder.html
+ *
  */
 public final class _String
 {

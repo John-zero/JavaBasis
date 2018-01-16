@@ -48,6 +48,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/com/jvm/DefaultMemory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/com/jvm/InitializationOrder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/com/jvm/Memory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
