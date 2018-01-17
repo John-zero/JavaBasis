@@ -12,17 +12,6 @@ package com.java.lang;
  * synchronized
  *  对应的字节码是 monitorenter 和 monitorexit
  *
- * 线程
- *  线程生命周期状态: (java.lang.Thread.State)
- *    新建 (NEW)
- *    可运行 (RUNABLE)
- *    阻塞 (BLOCKED)
- *    等待 (WAITING)
- *    计时等待 (TIMED WAITING)
- *    死亡 (TERMINATED)
- *
- *    Java 线程的状态以及切换 (2016-04-25) : https://segmentfault.com/a/1190000005006079
- *
  * ObjectWaiter
  *  双向链表结构对象, 每一个等待锁的线程都会被封装成 ObjectWaiter 对象
  *  存放 Thread (线程对象), ParkEvent, 当前状态 TStates(枚举) 等数据

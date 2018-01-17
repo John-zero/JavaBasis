@@ -48,6 +48,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/com/java/lang/_Thread.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/com/jvm/DefaultMemory.java">
           <value>
             <set />
@@ -59,6 +64,61 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/com/jvm/Memory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/bus/control/OrderedControlBus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/bus/device_query/QueryRecordBus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/enums/D2SQueryResultTypeEnum.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/gizwits/AbsGizwitsCmdBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/gizwits/version/v2_1/GizwitsControlCmdBuilder2_1.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/protocol/datapoint/D2S/BM/BM_0x42.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/protocol/datapoint/D2S/BM/BM_0x43.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/protocol/datapoint/D2S/BM/V2_2_0/BM_0x42.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/protocol/datapoint/D2S/BM/V2_2_0/BM_0x43.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/protocol/datapoint/D2S/SC/SC_0x03.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../allpay/normal_bus_cloud/m2m_transport/src/com/xpg/pay/plugin/m2m/protocol/datapoint/S2D/BM/BM_QueryRecord.java">
           <value>
             <set />
           </value>

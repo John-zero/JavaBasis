@@ -12,7 +12,7 @@ import java.util.List;
  * -Xmx2048M # JVM 最大可用内存 1024M = 1G, 2048M = 2G, 3072M = 3G, 4096M = 4G
  * -Xms1024M # JVM 最小可用内存
  *
- * -Xss1M # 每个线程默认内存大小, JDM 5+ 后默认是 1M, (128k, 256k, 1M)
+ * -Xss1M # 每个线程默认内存大小, JDK 5+ 后默认是 1M, (128k, 256k, 1M)
  *
  * Survivor, Eden, 年老代 设置
  *  1. 直接设置具体内存大小值
@@ -99,6 +99,17 @@ import java.util.List;
  *  -XX:+PrintGCDateStamps # 输出 GC 的日期时间
  *  -XX:+PrintHeapAtGC # 输出 GC 前后输出堆的信息
  *  -Xloggc:E:/log/gc.log # GC 日志文件的输出路径
+ *
+ *
+ * 内存泄漏 (Memory Leak)
+ *  申请空间的内存对象因为与 GC Root 一直存在相关联导致无法被 GC 垃圾收集器自动回收释放
+ *
+ * 内存溢出 (Memory Overflow)
+ *   异常提示: java.lang.OutOfMemoryError: ...
+ *   除了 程序计数器 外, 其他几个运行时区域都有可能发生该异常的可能
+ *   内存泄漏 只是导致内存溢出的其中一种情况而已
+ *
+ *   参考: 知乎 - 内存泄漏和内存溢出有啥区别？ : https://www.zhihu.com/question/40560123
  *
  */
 public class Memory
