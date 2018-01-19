@@ -19,6 +19,10 @@ package com.java.lang;
  *  管程
  *  纤程
  *
+ *  参考:
+ *      进程与线程的一个简单解释 (阮一峰, 2013-04-24) : http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
+ *
+ *
  * 线程生命周期状态: (java.lang.Thread.State)
  *  新建 (NEW)
  *  可运行 (RUNNABLE) # A thread executing in the Java virtual machine is in this state.

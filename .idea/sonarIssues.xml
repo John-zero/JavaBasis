@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/com/java/Basis.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/com/java/SystemInfo.java">
           <value>
             <set />
@@ -49,6 +54,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/com/java/lang/_Thread.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/com/java/util/concurrent/_ThreadPoolExecutor.java">
           <value>
             <set />
           </value>

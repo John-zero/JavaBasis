@@ -82,6 +82,10 @@ import java.util.List;
  *  JDK 9 默认:
  *      -XX:+UseG1GC
  *
+ *  java -XX:+PrintFlagsFinal -version | grep "UseG1\|UseConcMarkSweep\|UseParallel\|UseParNew\|UseSerial"
+ *
+ *  jinfo -flag UseParallelGC <pid>
+ *
  *  垃圾收集器                   新生代                 老年代                 备用
  *  -XX:+UseSerialGC            Serial                Serial Old (MSC)
  *  -XX:+UseParNewGC            ParNew                Serial Old (MSC)
@@ -193,7 +197,7 @@ public class Memory
 }
 
 /**
- JDK Version = 1.8.0_152
+ JDK Version = 1.8.0_152, Windows 10
 
  执行 java -XX:+PrintFlagsFinal 命令
 

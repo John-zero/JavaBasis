@@ -90,10 +90,22 @@ package com.java.lang;
              // do something ...
          }
 
+ *    参考：
+ *      JVM 源码分析之 Object.wait/notify(All)完全解读 (2016-03-27)
+ *          http://lovestblog.cn/blog/2016/03/27/object-wait-notify/
+ *
  *    延伸
  *      Object.wait() 和 Thread.sleep()
  *        当前线程调用对象 Object.wait() 会释放锁, 然后进入 Wait Set 队列, 依靠 Object.notify()/Object.notifyAll() 或者 Object.wait(timeout) 自动唤醒
  *        当前线程调用 Thread.sleep() 不会释放锁 (睡着了也抱着锁对象), 强制当前线程进入阻塞状态, 睡眠到期当前线程自动苏醒进入可运行状态
+ *
+ *      Object.notify() 和 Object.notifyAll() 的区别
+ *        参考:
+ *          知乎 : https://www.zhihu.com/question/37601861/answer/145545371
+ *
+ *      Object.notify() 容易导致死锁, 而 Object.notifyAll() 不会
+ *        参考:
+ *          从一个死锁分析wait,notify,notifyAll (2017-08-24) : https://www.jianshu.com/p/45626f4e0fc1
  *
  *  finalize()
  *
