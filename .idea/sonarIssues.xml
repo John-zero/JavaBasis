@@ -38,6 +38,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/com/java/lang/_ClassLoader.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/com/java/lang/_Number.java">
           <value>
             <set />
@@ -79,6 +84,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/com/jvm/Memory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/java/lang/Object.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/java/lang/String.java">
           <value>
             <set />
           </value>
