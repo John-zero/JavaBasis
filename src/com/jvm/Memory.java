@@ -115,6 +115,9 @@ import java.util.List;
  *
  *   参考: 知乎 - 内存泄漏和内存溢出有啥区别？ : https://www.zhihu.com/question/40560123
  *
+ * 字符串常量池
+ *   -XX:+PrintStringTableStatistics
+ *
  */
 public class Memory
 {

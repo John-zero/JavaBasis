@@ -32,6 +32,20 @@ package com.java.lang;
  *    注意: notify() 和 notifyAll() 不会释放所占有的 ObjectMonitor 对象, 真正释放 ObjectMonitor 对象的时间点是在执行 monitorexit 指令
  *      一旦释放 ObjectMonitor 对象, 那么 Entry Set 中的 ObjectWaiter 节点所保存的线程就可以公平竞争 ObjectMonitor 对象进行加锁操作了
  *
+ * 函数:
+ *  native Class<?> getClass();
+ *  native int hashCode();
+ *  boolean equals(Object obj) {}
+ *  native Object clone() throws CloneNotSupportedException;
+ *  String toString() {}
+ *  native void notify();
+ *  native void notifyAll();
+ *  native void wait(long timeout) throws InterruptedException;
+ *  void wait(long timeout, int nanos) throws InterruptedException {}
+ *  void wait() throws InterruptedException {
+ *      wait(0);
+ *  }
+ *  void finalize() throws Throwable { }
  *
  * 函数套件:
  *  hashCode() equals()
