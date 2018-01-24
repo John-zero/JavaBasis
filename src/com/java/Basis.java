@@ -24,6 +24,18 @@ public class Basis
         System.out.println("1 % 3 = " + (1 % 3));
         System.out.println("0 % 3 = " + (0 % 3));
 
+        // 需求: 奇数在前, 偶数在后 (O(1))
+        int [] sequences = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        sequences(sequences); // 运算
+        for (int k = 0; k < sequences.length; k++)
+        {
+            System.out.print(sequences[k] + ", ");
+        }
+    }
+
+    protected static void sequences (int [] sequences)
+    {
+        // https://www.cnblogs.com/xing901022/p/3755795.html
     }
 
 }

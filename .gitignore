@@ -1,1 +1,26 @@
-/bin/
+.gradle
+gradlew
+gradle
+gradlew.bat
+
+out/
+build/
+bin/
+classes/
+upload/
+session_data/
+*.jar
+*.war
+*.class
+
+#ide
+.project
+.settings
+.classpath
+.idea/
+*.iml
+*.eml
+*.log
+
+#mac os
+.DS_Store

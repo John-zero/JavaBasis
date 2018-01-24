@@ -110,6 +110,12 @@ public final class _String
         StringBuilder _StringBuilder = new StringBuilder("StringBuilder");
 
 
+        System.out.println("------------------------------------------------------------------------------------------");
+
+        String _Hello_0 = "Hello";
+        String _Hello_1 = "He" + "llo";
+
+
     }
 
 }

@@ -15,6 +15,10 @@ import java.net.URL;
  *  Class.forName("");
  *      静态方法, 动态加载类文件, 是要求JVM查找并加载指定的类, forName 只是加载类, 并不执行任何代码
  *
+ *  注意:
+ *      Class 一般是延迟加载的
+ *      使用自定义类加载器, 强行用 defineClass() 加载一个以 "java.lang" 开头的类将会得到虚拟机抛出的 "java.lang.SecurityException: Prohibited package name: java.lang" 的异常
+ *
  *
  * 相关文章:
  *  知乎
@@ -28,6 +32,16 @@ public class _ClassLoader
     {
         java.lang.String _String = new java.lang.String("自定义 java.lang.String 相同包路径的类");
 
+//        java.util.Date _Date = new java.util.Date();
+//        ClassLoader _classLoader = java.lang.String.class.getClassLoader();
+        ClassLoader _classLoader = _String.class.getClassLoader();
+        while(_classLoader != null)
+        {
+            System.out.println(_classLoader);
+            _classLoader = _classLoader.getParent();
+        }
+        System.out.println(_classLoader);
+
 
         System.out.println("------------------------------------------------------------------------------------------");
 
@@ -37,6 +51,10 @@ public class _ClassLoader
         {
             System.out.println(urls[i].toExternalForm());
         }
+
+
+        System.out.println("------------------------------------------------------------------------------------------");
+
 
         System.out.println(System.getProperty("sun.boot.class.path"));
 
@@ -85,6 +103,21 @@ class ScriptClassLoader extends ClassLoader
     protected Class<?> findClass(String name) throws ClassNotFoundException
     {
         return super.findClass(name);
+    }
+
+    /**
+     * loadClass() 最终也会调用 findClass()
+     *
+     * 不推荐覆盖 loadClass()
+     *
+     * 实现双亲委派模型
+     *
+     * 当然, 除非你要刻意破坏双亲委派模型...
+     */
+    @Override
+    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException
+    {
+        return super.loadClass(name, resolve);
     }
 
 }
