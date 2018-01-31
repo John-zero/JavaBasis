@@ -137,6 +137,9 @@ package com.java.lang;
 public class _Object
 {
 
+    public static void main (String [] args)
+    {
 
+    }
 
 }

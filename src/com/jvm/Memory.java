@@ -68,9 +68,64 @@ import java.util.List;
  *  并发与并行的垃圾收集器: -XX:+UseG1GC
  *
  *  串行垃圾收集器: Serial (复制算法), Serial Old (MSC) (标记-整理算法)
- *  并行垃圾收集器: ParNew (复制算法), Parallel Scavenge (复制算法), Parallel Old (标记-整理算法)
+ *  并行垃圾收集器: ParNew (复制算法), Parallel Scavenge (复制算法, 吞吐量优先), Parallel Old (标记-整理算法)
  *  并发标记扫描垃圾收集器: Concurrent Mark Sweep (CMS) (标记-清除算法)
  *  G1 垃圾收集器: Garbage First G1 (分代收集算法)
+ *
+ * ------------------------------------------------------------------------------------------------------------------------------------------------
+ *
+ *  Serial
+ *   可搭配: Serial + Serial Old (MSC), Serial + CMS + Serial Old (MSC)
+ *
+ *  ParNew
+ *   Serial 的多线程版本
+ *   可搭配: ParNew + Serial Old (MSC), ParNew + CMS + Serial Old (MSC)
+ *
+ *  Parallel Scavenge
+ *   新生代收集器, 复制算法, 吞吐量优先垃圾收集器, 独立代码框架实现
+ *   可搭配: Parallel Scavenge + Serial Old (MSC), Parallel Scavenge + Parallel Old
+ *   -XX:MaxGCPauseMillis=n # 控制最大垃圾收集停顿时间
+ *   -XX:GCTimeRatio=n # 直接设置吞吐量大小
+ *   -XX:+UseAdaptiveSizePolicy # GC 自适应调节策略, 开关参数, 开启以后就不再需要手动指定新生代大小, Eden 与 Survivor 大小比例 等细节参数,
+ *                                  虚拟机会根据当前系统的运行情况收集性能监控动态调整这些参数以提供最合适的停顿时间或者最大的吞吐量
+ *   关注点是达到一个可控制的吞吐量
+ *   跟 ParNew 的区别 关注点 和 -XX:+UseAdaptiveSizePolicy
+ *
+ *  Serial Old (MSC)
+ *   老年代收集器, 单线程收集器, 标记-整理算法
+ *   可搭配: Parallel Scavenge + Serial Old (MSC), ParNew + CMS + Serial Old (MSC)
+ *
+ *  Parallel Old
+ *   老年代收集器, 多线程收集器, 标记-整理算法, JDK 1.6 +
+ *   可搭配: Parallel Scavenge + Parallel Old (注重吞吐量以及 CPU 资源敏感)
+ *
+ *  Concurrent Mark Sweep (CMS)
+ *   关注点是以获取最短回收停顿时间为目标的收集器(并发收集, 低停顿), 标记-清除算法
+ *   可搭配: Serial + CMS + Serial Old (MSC), ParNew + CMS + Serial Old (MSC)
+ *   步骤:
+ *      初始标记 (STW)
+ *      并发标记
+ *      重新标记 (STW)
+ *      并发清除
+ *   缺点:
+ *      对 CPU 资源非常敏感
+ *      无法处理浮动垃圾, 可能出现 "Concurrent Mode Failure" 失败而导致另一次 Full GC 的产生, 然后将启动后备预案: Serial Old (MSC) 重新对老年代进行垃圾收集
+ *      标记-清除算法意味着收集结束会产生大量的空间碎片, 预备方案是内存碎片合并整理 (压缩, 但是会导致停顿时间变长)
+ *
+ *  Garbage First G1
+ *   分代收集算法, 独立代码框架实现
+ *   特点:
+ *      并行与并发
+ *      分代收集
+ *      空间整合
+ *      可预测停顿
+ *   步骤:
+ *      初始标记
+ *      并发标记
+ *      最终标记
+ *      筛选回收
+ *
+ *------------------------------------------------------------------------------------------------------------------------------------------------
  *
  *  JDK 6 默认:
  *      ...
@@ -104,6 +159,11 @@ import java.util.List;
  *  -XX:+PrintHeapAtGC # 输出 GC 前后输出堆的信息
  *  -Xloggc:E:/log/gc.log # GC 日志文件的输出路径
  *
+ * 字符串常量池
+ *   -XX:+PrintStringTableStatistics
+ *
+ * STW Stop-The-Word
+ *
  *
  * 内存泄漏 (Memory Leak)
  *  申请空间的内存对象因为与 GC Root 一直存在相关联导致无法被 GC 垃圾收集器自动回收释放
@@ -114,9 +174,6 @@ import java.util.List;
  *   内存泄漏 只是导致内存溢出的其中一种情况而已
  *
  *   参考: 知乎 - 内存泄漏和内存溢出有啥区别？ : https://www.zhihu.com/question/40560123
- *
- * 字符串常量池
- *   -XX:+PrintStringTableStatistics
  *
  */
 public class Memory

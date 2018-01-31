@@ -30,12 +30,24 @@ public class Basis
         for (int k = 0; k < sequences.length; k++)
         {
             System.out.print(sequences[k] + ", ");
+
+            if((k + 1) == sequences.length)
+                System.out.println();
         }
+
+        // 判断一个数是否是2的幂次方
+        System.out.println("isPowerOfTwo: " + isPowerOfTwo(2));
+        System.out.println("isPowerOfTwo: " + isPowerOfTwo(3));
     }
 
     protected static void sequences (int [] sequences)
     {
         // https://www.cnblogs.com/xing901022/p/3755795.html
+    }
+
+    private static boolean isPowerOfTwo(int val)
+    {
+        return (val & -val) == val;
     }
 
 }

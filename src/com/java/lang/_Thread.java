@@ -123,6 +123,12 @@ public class _Thread
         });
         thread.setPriority(Thread.MAX_PRIORITY);
         thread.start(); // 注意: 不是调用 thread.run();
+
+        // 多次/重复 start()
+        thread.start();
+        thread.start();
+        thread.start();
+
     }
 
 }
